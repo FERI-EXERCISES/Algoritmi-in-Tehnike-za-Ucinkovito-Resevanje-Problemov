@@ -28,7 +28,7 @@ ODDAJA
 
 Oddajte ZIP datoteko, v katero vključite poročilo in izvorno kodo. Seminarsko nalogo (ZIP datoteko) morate oddati vsi člani skupine.
 
-Rok za oddajo: 11. 5. 14. 5. 2024 ob 6h zjutraj (Kasnejše oddaje niso možne!)
+Rok za oddajo: 14. 5. 2024 ob 6h zjutraj (Kasnejše oddaje niso možne!)
 
 
 
