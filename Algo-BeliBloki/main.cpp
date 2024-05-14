@@ -77,18 +77,34 @@ int Algo(std::string path) {
     }
     inputFile.close();
 
-    return blocks.countValidMoves();
+    auto start = std::chrono::high_resolution_clock::now();
+    int blox = blocks.countValidMoves();
+    auto end = std::chrono::high_resolution_clock::now();
+
+    // path
+    // std::chrono::duration_cast<std::chrono::microseconds>(end - start).count()
+    // W * H
+    // K
+    // blox
+
+    std::cout << path << "\t" << K << "\t" << W * H << "\t" << blox << "\t" << std::chrono::duration_cast<std::chrono::microseconds>(end - start).count() << std::endl;
+
+    // graf čas/K
+    // graf blox/K
+    // graf čas/W*H
+    // graf čas/blox
+
+
+    return blox;
 }
 
 int main(int argc, char *argv[]) {
     std::string path = "beli_bloki";
+    std::cout << "path" << "\t" << "K" << "\t" << "W * H" << "\t" << "blox" << "\t" << "time(us)" << std::endl;
     for (const auto &entry: std::filesystem::directory_iterator(path)) {
         auto file_path = entry.path();
         if (file_path.extension() == ".in"){
-            auto start = std::chrono::high_resolution_clock::now();
             Algo(file_path.string());
-            auto end = std::chrono::high_resolution_clock::now();
-            std::cout << file_path.filename().string() << " took " << std::chrono::duration_cast<std::chrono::microseconds>(end - start).count() << "us to process." << std::endl;
         }
     }
     return 0;
